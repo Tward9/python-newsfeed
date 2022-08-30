@@ -21,3 +21,8 @@ class User(Base):
         #make sure password has more than 4 characters
         assert len(password)>4
         return bcrypt.hashpw(password.encode('utf-8'), salt)
+    def verify_password(self,password):
+        return bcrypt.checkpw(
+            password.encode('utf-8'),
+            self.password.encode('utf-8')
+        )
