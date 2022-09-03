@@ -103,7 +103,7 @@ def upvote():
     return '', 204
 
 
-@bp.route('./posts', methods=['POST'])
+@bp.route('/posts', methods=['POST'])
 def create():
     data = request.get_json()
     db = get_db()
